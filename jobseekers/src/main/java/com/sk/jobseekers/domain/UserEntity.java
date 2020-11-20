@@ -3,12 +3,22 @@
  */
 package com.sk.jobseekers.domain;
 
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.Table;
+
 /**
  * @author shifa kaushar
  *
  */
+@Entity
+@Table(name="users")
 public class UserEntity {
 	
+	@Id
+	@GeneratedValue(strategy = GenerationType.AUTO)
 	private int userId;
 	private String  firstname;
 	private String lastname;
@@ -17,6 +27,9 @@ public class UserEntity {
 	private String mobile;
 	private String address;
 	private int roleId;
+
+	
+	
 	/**
 	 * @param userId
 	 * @param firstname
@@ -38,6 +51,9 @@ public class UserEntity {
 		this.mobile = mobile;
 		this.address = address;
 		this.roleId = roleId;
+	}
+	public UserEntity() {
+		// TODO Auto-generated constructor stub
 	}
 	/**
 	 * @return the userId
